@@ -32,7 +32,9 @@ public class FractionTest {
 
     @Test
     public void testAddInt() {
-        fail();
+        Fraction f = new Fraction(13, 7);
+        assertFraction(27, 7, f.add(2));
+        assertFraction(-1, 7, f.add(-2));
     }
 
     @Test
