@@ -15,12 +15,19 @@ public class FractionTest {
 
     @Test
     public void testFractionIntInt() {
-        fail();
+        assertFraction(1, 4, new Fraction(1, 4));
+        assertFraction(-13, 27, new Fraction(13, -27));
+        assertFraction(5, 7, new Fraction(-5, -7));
+        assertFraction(4, 2, new Fraction(4, 2));
+        ArithmeticException e = assertThrows(ArithmeticException.class, () -> new Fraction(11, 0));
+        assertEquals("Division by zero", e.getMessage());
     }
 
     @Test
     public void testFractionInt() {
-        fail();
+        assertFraction(0, 1, new Fraction(0));
+        assertFraction(3, 1, new Fraction(3));
+        assertFraction(-13, 1, new Fraction(-13));
     }
 
     @Test
