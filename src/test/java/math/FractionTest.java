@@ -63,7 +63,20 @@ public class FractionTest {
     @Test
     public void testAddFraction() {
         // TODO (TOZF9M)
-        fail();
+        Fraction f = new Fraction(1, 3);
+        Fraction g = new Fraction(2, 3);
+        assertFraction(9, 9, f.add(g));
+        assertFraction(9, 9, g.add(f));
+
+        Fraction h = new Fraction(23, 74);
+        Fraction i = new Fraction(32, 42);
+        assertFraction(3334, 3108, h.add(i));
+        assertFraction(3334, 3108, i.add(h));
+
+        Fraction j = new Fraction(-70, 30);
+        Fraction k = new Fraction(32, 65);
+        assertFraction(-3590, 1950, j.add(k));
+        assertFraction(-3590, 1950, k.add(j));
     }
 
     @Test
