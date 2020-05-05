@@ -65,8 +65,8 @@ public class FractionTest {
         // TODO (TOZF9M)
         Fraction f = new Fraction(1, 3);
         Fraction g = new Fraction(2, 3);
-        assertFraction(9, 9, f.add(g));
-        assertFraction(9, 9, g.add(f));
+        assertFraction(3, 3, f.add(g));
+        assertFraction(3, 3, g.add(f));
 
         Fraction h = new Fraction(23, 74);
         Fraction i = new Fraction(32, 42);
