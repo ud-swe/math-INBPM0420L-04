@@ -86,8 +86,12 @@ public class FractionTest {
 
     @Test
     public void testReciprocal() {
-        // TODO (GFD8XO)
-        fail();
+        Fraction f = new Fraction(13, 7);
+        assertFraction(7,13,f.reciprocal(13,7));
+        assertFraction(-3,4,f.reciprocal(-4,3));
+        assertFraction(-8,9,f.reciprocal(9,-8));
+        assertFraction(3,4,f.reciprocal(-4,-3));
+        assertFraction(1,5,f.reciprocal(5,0));
     }
 
     @Test
