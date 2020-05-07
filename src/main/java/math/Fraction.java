@@ -178,9 +178,12 @@ public class Fraction extends Number implements Cloneable {
      *
      * @return a fraction that represents the reciprocal of this fraction
      */
-    public Fraction reciprocal() {
+    public Fraction reciprocal(int numerator,int denominator) {
         // TODO (GFD8XO)
-        return null;
+        if (denominator == 0){
+             denominator = 1;
+                    }
+        return new Fraction(denominator,numerator);
     }
 
     /**
