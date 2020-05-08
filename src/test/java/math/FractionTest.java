@@ -124,7 +124,18 @@ public class FractionTest {
     @Test
     public void testToString() {
         // TODO (HG6IYU)
-        fail();
+        Fraction f = new Fraction(1, 2);
+        Fraction g = new Fraction(-1, -2);
+        Fraction h = new Fraction(-1, 2);
+        Fraction i = new Fraction(1, -2);
+        Fraction j = new Fraction(0, 2);
+        Fraction k = new Fraction(2, 1);
+        assertEquals("1/2", f.toString());
+        assertEquals("1/2", g.toString());
+        assertEquals("-1/2", h.toString());
+        assertEquals("-1/2", i.toString());
+        assertEquals("0", j.toString());
+        assertEquals("2", k.toString());
     }
 
     @Test
