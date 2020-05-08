@@ -166,8 +166,11 @@ public class Fraction extends Number implements Cloneable {
      * @throws ArithmeticException if the parameter {@code fraction} is zero
      */
     public Fraction divide(Fraction fraction) throws ArithmeticException {
-        // TODO (FXCGCX)
-        return null;
+        if(fraction.numerator == 0)
+        {
+            throw new ArithmeticException("Division by zero");
+        }
+        return new Fraction(this.numerator * fraction.denominator, this.denominator * fraction.numerator);
     }
 
     /**
