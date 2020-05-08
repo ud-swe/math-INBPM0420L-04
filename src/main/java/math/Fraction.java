@@ -136,7 +136,15 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction add(Fraction fraction) {
         // TODO (TOZF9M)
-        return null;
+        if (this.denominator == fraction.getDenominator()) {
+            return new Fraction(this.numerator + fraction.getNumerator(), this.denominator);
+        }
+
+        int newNumerator = (this.numerator * fraction.getDenominator())
+                + (this.denominator * fraction.getNumerator());
+        int newDenominator = this.denominator * fraction.getDenominator();
+
+        return new Fraction(newNumerator, newDenominator);
     }
 
     /**
