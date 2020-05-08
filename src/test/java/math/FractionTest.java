@@ -2,6 +2,7 @@ package math;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class FractionTest {
@@ -126,9 +127,26 @@ public class FractionTest {
     }
 
     @Test
+    @DisplayName("Some fails, but not me!")
     public void testReduce() {
         // TODO (OX3YA0)
-        fail();
+        Fraction test1 = new Fraction(8,4);
+        Fraction test2 = new Fraction(-9,3);
+        Fraction test3 = new Fraction(16,-4);
+        Fraction test4 = new Fraction(-25,-5);
+        Fraction test5 = new Fraction(7,5);
+        Fraction test6 = new Fraction(-2, 3);
+        Fraction test7 = new Fraction(7, -11);
+        Fraction test8 = new Fraction(-13, -23);
+
+        assertFraction(2,1, test1.reduce());
+        assertFraction(-3,1, test2.reduce());
+        assertFraction(-4,1, test3.reduce());
+        assertFraction(5,1, test4.reduce());
+        assertFraction(7, 5, test5.reduce());
+        assertFraction(-2, 3, test6.reduce());
+        assertFraction(-7, 11, test7.reduce());
+        assertFraction(13, 23, test8.reduce());
     }
 
     @Test
