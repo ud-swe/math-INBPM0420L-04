@@ -87,8 +87,18 @@ public class FractionTest {
 
     @Test
     public void testDivideFraction() {
-        // TODO (FXCGCX)
-        fail();
+        Fraction f = new Fraction(5,2);
+        Fraction g = new Fraction(3, 4);
+        assertFraction(20,6,f.divide(g));
+        assertFraction(10,10,f.divide(f));
+
+        Fraction h = new Fraction(-1, 6);
+        Fraction i = new Fraction(1, 5);
+        assertFraction(-5, 6, h.divide(i));
+        assertFraction(-6, 5, i.divide(h));
+
+        ArithmeticException e = assertThrows(ArithmeticException.class, () -> h.divide(new Fraction(0, 1)));
+        assertEquals("Division by zero", e.getMessage());
     }
 
     @Test
