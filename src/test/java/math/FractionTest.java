@@ -135,13 +135,39 @@ public class FractionTest {
     @Test
     public void testDoubleValue() {
         // TODO (O2VTJT)
-        fail();
+        Fraction f = new Fraction( 1);
+        assertEquals(1d, f.doubleValue());
+
+        Fraction g = new Fraction( 1, 8);
+        assertEquals(0.125d, g.doubleValue());
+
+        Fraction h = new Fraction(-1, 4);
+        assertEquals(-0.25d, h.doubleValue());
+
+        Fraction i = new Fraction(1, 3);
+        assertEquals(1d / 3d, i.doubleValue());
+
+        Fraction j = new Fraction(0, 3);
+        assertEquals(0, j.doubleValue());
     }
 
     @Test
     public void testFloatValue() {
         // TODO (O2VTJT)
-        fail();
+        Fraction f = new Fraction(1);
+        assertEquals(1f, f.floatValue());
+
+        Fraction g = new Fraction( 1, 8);
+        assertEquals(0.125f, g.floatValue());
+
+        Fraction h = new Fraction(-1, 4);
+        assertEquals(-0.25f, h.floatValue());
+
+        Fraction i = new Fraction(1, 3);
+        assertEquals(1f / 3f, i.floatValue());
+
+        Fraction j = new Fraction(0, 3);
+        assertEquals(0, j.floatValue());
     }
 
     @Test

@@ -218,7 +218,7 @@ public class Fraction extends Number implements Cloneable {
      */
     public double doubleValue() {
         // TODO (O2VTJT)
-        return 0;
+        return (double)numerator / denominator;
     }
 
     /**
@@ -228,7 +228,7 @@ public class Fraction extends Number implements Cloneable {
      */
     public float floatValue() {
         // TODO (O2VTJT)
-        return 0;
+        return (float)numerator / denominator;
     }
 
     /**
