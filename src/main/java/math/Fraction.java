@@ -259,7 +259,10 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction reduce() {
         // TODO (OX3YA0)
-        return null;
+        int gcd = GCD.gcd(getNumerator(), getDenominator());
+        return new Fraction(
+                getNumerator() / gcd,
+                getDenominator() / gcd);
     }
 
     /**
