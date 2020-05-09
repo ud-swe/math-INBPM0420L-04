@@ -222,13 +222,42 @@ public class FractionTest {
     @Test
     public void testIntValue() {
         // TODO (H2P5YM)
-        fail();
+        Fraction k = new Fraction( 4);
+        assertEquals(4, k.intValue());
+
+        Fraction d = new Fraction( 8, 5);
+        assertEquals(1, d.intValue());
+
+        Fraction w = new Fraction(-7, 1);
+        assertEquals(-7, w.intValue());
+
+        Fraction q = new Fraction(14, 7);
+        assertEquals(2, q.intValue());
+
+        Fraction r = new Fraction(10, 8);
+        assertEquals(1, r.intValue());
+
+
     }
 
     @Test
     public void testLongValue() {
         // TODO (H2P5YM)
-        fail();
+
+        Fraction k = new Fraction( 2);
+        assertEquals(2l, k.longValue());
+
+        Fraction d = new Fraction( 5, 5);
+        assertEquals(1l, d.longValue());
+
+        Fraction o = new Fraction(-7, 2);
+        assertEquals(-3l, o.longValue());
+
+        Fraction z = new Fraction(8, 7);
+        assertEquals(1l, z.longValue());
+
+        Fraction p = new Fraction(2, 9);
+        assertEquals(0l, p.longValue());
     }
 
     @Test
