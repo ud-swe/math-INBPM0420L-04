@@ -211,7 +211,7 @@ public class Fraction extends Number implements Cloneable {
      */
     public int intValue() {
         // TODO (H2P5YM)
-        return 0;
+        return (int) numerator / denominator;
     }
 
     /**
@@ -241,7 +241,7 @@ public class Fraction extends Number implements Cloneable {
      */
     public long longValue() {
         // TODO (H2P5YM)
-        return 0;
+        return (long) numerator / denominator;
     }
 
     /**
