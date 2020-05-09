@@ -201,7 +201,13 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction abs() {
         // TODO (BQYCKN)
-        return null;
+        if (this.numerator < 0){
+            this.numerator *= -1;
+        }
+        if (this.denominator < 0) {
+            this.denominator *= -1;
+        }
+        return this;
     }
 
     /**
@@ -252,7 +258,11 @@ public class Fraction extends Number implements Cloneable {
      */
     public boolean isZero() {
         // TODO (BQYCKN)
-        return false;
+        if (this.numerator == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
