@@ -83,7 +83,29 @@ public class FractionTest {
     @Test
     public void testSubtractFraction() {
         // TODO (UW7GG6)
-        fail();
+        Fraction f = new Fraction(3,4);
+        Fraction g = new Fraction(2, 4);
+
+        assertFraction(1, 4, f.subtract(g));
+        assertFraction(-1, 4, g.subtract(f));
+
+        Fraction h = new Fraction(155, 125);
+        Fraction i = new Fraction(11, 20);
+
+        assertFraction(1725, 2500, h.subtract(i));
+        assertFraction(-1725, 2500, i.subtract(h));
+
+        Fraction j = new Fraction(-23, 45);
+        Fraction k = new Fraction(12, 47);
+
+        assertFraction(-1621, 2115, j.subtract(k));
+        assertFraction(1621, 2115, k.subtract(j));
+
+        Fraction l = new Fraction(-11, -54);
+        Fraction m = new Fraction(-31, 8);
+
+        assertFraction(1762, 432, l.subtract(m));
+        assertFraction(-1762, 432, m.subtract(l));
     }
 
     @Test
