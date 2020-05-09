@@ -237,9 +237,26 @@ public class FractionTest {
     }
 
     @Test
-    public void testClone() {
+    public void testClone() throws CloneNotSupportedException {
         // TODO (B0G7OP)
-        fail();
+        Fraction test1 = new Fraction(8, 4);
+        Fraction test2 = new Fraction(9, 3);
+        Fraction test3 = new Fraction(-69, 4);
+        Fraction test4 = new Fraction(-25, 5);
+        Fraction test5 = new Fraction(7, 5);
+        Fraction test6 = new Fraction(2, 3);
+        Fraction test7 = new Fraction(7, 11);
+        Fraction test8 = new Fraction(13, 23);
+
+        assertFraction(8, 4, test1.clone());
+        assertFraction(9, 3, test2.clone());
+        assertFraction(-69, 4, test3.clone());
+        assertFraction(-25, 5, test4.clone());
+        assertFraction(7, 5, test5.clone());
+        assertFraction(2, 3, test6.clone());
+        assertFraction(7, 11, test7.clone());
+        assertFraction(13, 23, test8.clone());
+
     }
 
     @Test
