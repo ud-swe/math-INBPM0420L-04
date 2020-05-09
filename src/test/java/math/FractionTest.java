@@ -46,7 +46,29 @@ public class FractionTest {
     @Test
     public void testMultiplyInt() {
         // TODO (TJ7DFK)
-        fail();
+        Fraction f1 = new Fraction(1,2);
+        int n1 = 5;
+        assertFraction(5,2,f1.multiply(n1));
+
+        Fraction f2 = new Fraction(1,2);
+        int n2 = -5;
+        assertFraction(-5,2,f2.multiply(n2));
+
+        Fraction f3 = new Fraction(-5,12);
+        int n3 = 4;
+        assertFraction(-20,12,f3.multiply(n3));
+
+        Fraction f4 = new Fraction(5,-12);
+        int n4 = -4;
+        assertFraction(20,12,f4.multiply(n4));
+
+        Fraction f5 = new Fraction(3,7);
+        int n5 = 0;
+        assertFraction(Fraction.ZERO.getNumerator(),Fraction.ZERO.getDenominator(),f5.multiply(n5));
+
+        Fraction f6 = new Fraction(-3,7);
+        int n6 = 0;
+        assertFraction(Fraction.ZERO.getNumerator(),Fraction.ZERO.getDenominator(),f6.multiply(n6));
     }
 
     @Test
