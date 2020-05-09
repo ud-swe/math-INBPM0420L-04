@@ -87,11 +87,14 @@ public class FractionTest {
     @Test
     public void testReciprocal() {
         Fraction f = new Fraction(13, 7);
-        assertFraction(7,13,f.reciprocal(13,7));
-        assertFraction(-3,4,f.reciprocal(-4,3));
-        assertFraction(-8,9,f.reciprocal(9,-8));
-        assertFraction(3,4,f.reciprocal(-4,-3));
-        assertFraction(1,5,f.reciprocal(5,0));
+        assertFraction(7,13,f.reciprocal());
+
+        Fraction f2 = new Fraction(-13, 4);
+        assertFraction(-4,13,f2.reciprocal());
+
+        Fraction f3 = new Fraction(-1, -4);
+        assertFraction(4,1,f3.reciprocal());
+
     }
 
     @Test
