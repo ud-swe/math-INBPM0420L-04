@@ -201,7 +201,15 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction abs() {
         // TODO (BQYCKN)
-        return null;
+        int numerator = this.numerator;
+        int denominator = this.denominator;
+        if (numerator < 0){
+            numerator *= -1;
+        }
+        if (denominator < 0) {
+            denominator *= -1;
+        }
+        return new Fraction(numerator, denominator);
     }
 
     /**
@@ -252,7 +260,11 @@ public class Fraction extends Number implements Cloneable {
      */
     public boolean isZero() {
         // TODO (BQYCKN)
-        return false;
+        if (this.numerator == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
