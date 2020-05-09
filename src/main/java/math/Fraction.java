@@ -103,11 +103,10 @@ public class Fraction extends Number implements Cloneable {
     public Fraction multiply(int n) {
         // TODO (TJ7DFK)
         if (n > 0 || n < 0){
-            this.numerator = numerator * n;
+            return new Fraction(this.numerator * n, this.denominator);
         }else {
             return ZERO;
         }
-        return new Fraction(this.numerator,this.denominator);
     }
 
     /**
