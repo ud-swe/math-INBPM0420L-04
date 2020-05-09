@@ -189,11 +189,7 @@ public class Fraction extends Number implements Cloneable {
      *
      * @return a fraction that represents the reciprocal of this fraction
      */
-    public Fraction reciprocal(int numerator,int denominator) {
-        // TODO (GFD8XO)
-        if (denominator == 0){
-             denominator = 1;
-                    }
+    public Fraction reciprocal() {
         return new Fraction(denominator,numerator);
     }
 
