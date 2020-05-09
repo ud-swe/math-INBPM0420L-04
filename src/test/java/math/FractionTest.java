@@ -139,13 +139,23 @@ public class FractionTest {
     @Test
     public void testAbs() {
         // TODO (BQYCKN)
-        fail();
+        Fraction f1 = new Fraction(-5, 10);
+        assertFraction(5, 10, f1.abs());
+        Fraction f2 = new Fraction(4, -12);
+        assertFraction(4, 12, f2.abs());
+        Fraction f3 = new Fraction(3, 5);
+        assertFraction(3, 5, f3.abs());
+        Fraction f4 = new Fraction(5, -10);
+        assertFraction(5, 10, f4.abs());
     }
 
     @Test
     public void testIsZero() {
         // TODO (BQYCKN)
-        fail();
+        Fraction f1 = new Fraction(0, 5);
+        assertTrue(f1.isZero());
+        Fraction f2 = new Fraction(20, 6);
+        assertFalse(f2.isZero());
     }
 
     @Test
