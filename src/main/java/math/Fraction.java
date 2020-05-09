@@ -136,7 +136,15 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction add(Fraction fraction) {
         // TODO (TOZF9M)
-        return null;
+        if (this.denominator == fraction.getDenominator()) {
+            return new Fraction(this.numerator + fraction.getNumerator(), this.denominator);
+        }
+
+        int newNumerator = (this.numerator * fraction.getDenominator())
+                + (this.denominator * fraction.getNumerator());
+        int newDenominator = this.denominator * fraction.getDenominator();
+
+        return new Fraction(newNumerator, newDenominator);
     }
 
     /**
@@ -158,8 +166,11 @@ public class Fraction extends Number implements Cloneable {
      * @throws ArithmeticException if the parameter {@code fraction} is zero
      */
     public Fraction divide(Fraction fraction) throws ArithmeticException {
-        // TODO (FXCGCX)
-        return null;
+        if(fraction.numerator == 0)
+        {
+            throw new ArithmeticException("Division by zero");
+        }
+        return new Fraction(this.numerator * fraction.denominator, this.denominator * fraction.numerator);
     }
 
     /**
@@ -193,7 +204,13 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction abs() {
         // TODO (BQYCKN)
-        return null;
+        if (this.numerator < 0){
+            this.numerator *= -1;
+        }
+        if (this.denominator < 0) {
+            this.denominator *= -1;
+        }
+        return this;
     }
 
     /**
@@ -213,7 +230,7 @@ public class Fraction extends Number implements Cloneable {
      */
     public double doubleValue() {
         // TODO (O2VTJT)
-        return 0;
+        return (double)numerator / denominator;
     }
 
     /**
@@ -223,7 +240,7 @@ public class Fraction extends Number implements Cloneable {
      */
     public float floatValue() {
         // TODO (O2VTJT)
-        return 0;
+        return (float)numerator / denominator;
     }
 
     /**
@@ -244,7 +261,11 @@ public class Fraction extends Number implements Cloneable {
      */
     public boolean isZero() {
         // TODO (BQYCKN)
-        return false;
+        if (this.numerator == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -254,7 +275,10 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction reduce() {
         // TODO (OX3YA0)
-        return null;
+        int gcd = GCD.gcd(getNumerator(), getDenominator());
+        return new Fraction(
+                getNumerator() / gcd,
+                getDenominator() / gcd);
     }
 
     /**
@@ -306,7 +330,13 @@ public class Fraction extends Number implements Cloneable {
     @Override
     public String toString() {
         // TODO (HG6IYU)
-        return null;
+        if (this.numerator == 0) {
+            return "0";
+        }
+        if (this.denominator == 1) {
+            return Integer.toString(this.numerator);
+        }
+        return this.numerator + "/" + this.denominator;
     }
 
 }

@@ -2,6 +2,7 @@ package math;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class FractionTest {
@@ -63,7 +64,20 @@ public class FractionTest {
     @Test
     public void testAddFraction() {
         // TODO (TOZF9M)
-        fail();
+        Fraction f = new Fraction(1, 3);
+        Fraction g = new Fraction(2, 3);
+        assertFraction(3, 3, f.add(g));
+        assertFraction(3, 3, g.add(f));
+
+        Fraction h = new Fraction(23, 74);
+        Fraction i = new Fraction(32, 42);
+        assertFraction(3334, 3108, h.add(i));
+        assertFraction(3334, 3108, i.add(h));
+
+        Fraction j = new Fraction(-70, 30);
+        Fraction k = new Fraction(32, 65);
+        assertFraction(-3590, 1950, j.add(k));
+        assertFraction(-3590, 1950, k.add(j));
     }
 
     @Test
@@ -74,8 +88,18 @@ public class FractionTest {
 
     @Test
     public void testDivideFraction() {
-        // TODO (FXCGCX)
-        fail();
+        Fraction f = new Fraction(5,2);
+        Fraction g = new Fraction(3, 4);
+        assertFraction(20,6,f.divide(g));
+        assertFraction(10,10,f.divide(f));
+
+        Fraction h = new Fraction(-1, 6);
+        Fraction i = new Fraction(1, 5);
+        assertFraction(-5, 6, h.divide(i));
+        assertFraction(-6, 5, i.divide(h));
+
+        ArithmeticException e = assertThrows(ArithmeticException.class, () -> h.divide(new Fraction(0, 1)));
+        assertEquals("Division by zero", e.getMessage());
     }
 
     @Test
@@ -100,25 +124,63 @@ public class FractionTest {
     @Test
     public void testAbs() {
         // TODO (BQYCKN)
-        fail();
+        Fraction f1 = new Fraction(-5, 10);
+        assertFraction(5, 10, f1.abs());
+        Fraction f2 = new Fraction(4, -12);
+        assertFraction(4, 12, f2.abs());
+        Fraction f3 = new Fraction(3, 5);
+        assertFraction(3, 5, f3.abs());
+        Fraction f4 = new Fraction(5, -10);
+        assertFraction(5, 10, f4.abs());
     }
 
     @Test
     public void testIsZero() {
         // TODO (BQYCKN)
-        fail();
+        Fraction f1 = new Fraction(0, 5);
+        assertTrue(f1.isZero());
+        Fraction f2 = new Fraction(20, 6);
+        assertFalse(f2.isZero());
     }
 
     @Test
+    @DisplayName("Some fails, but not me!")
     public void testReduce() {
         // TODO (OX3YA0)
-        fail();
+        Fraction test1 = new Fraction(8,4);
+        Fraction test2 = new Fraction(-9,3);
+        Fraction test3 = new Fraction(16,-4);
+        Fraction test4 = new Fraction(-25,-5);
+        Fraction test5 = new Fraction(7,5);
+        Fraction test6 = new Fraction(-2, 3);
+        Fraction test7 = new Fraction(7, -11);
+        Fraction test8 = new Fraction(-13, -23);
+
+        assertFraction(2,1, test1.reduce());
+        assertFraction(-3,1, test2.reduce());
+        assertFraction(-4,1, test3.reduce());
+        assertFraction(5,1, test4.reduce());
+        assertFraction(7, 5, test5.reduce());
+        assertFraction(-2, 3, test6.reduce());
+        assertFraction(-7, 11, test7.reduce());
+        assertFraction(13, 23, test8.reduce());
     }
 
     @Test
     public void testToString() {
         // TODO (HG6IYU)
-        fail();
+        Fraction f = new Fraction(1, 2);
+        Fraction g = new Fraction(-1, -2);
+        Fraction h = new Fraction(-1, 2);
+        Fraction i = new Fraction(1, -2);
+        Fraction j = new Fraction(0, 2);
+        Fraction k = new Fraction(2, 1);
+        assertEquals("1/2", f.toString());
+        assertEquals("1/2", g.toString());
+        assertEquals("-1/2", h.toString());
+        assertEquals("-1/2", i.toString());
+        assertEquals("0", j.toString());
+        assertEquals("2", k.toString());
     }
 
     @Test
@@ -129,13 +191,39 @@ public class FractionTest {
     @Test
     public void testDoubleValue() {
         // TODO (O2VTJT)
-        fail();
+        Fraction f = new Fraction( 1);
+        assertEquals(1d, f.doubleValue());
+
+        Fraction g = new Fraction( 1, 8);
+        assertEquals(0.125d, g.doubleValue());
+
+        Fraction h = new Fraction(-1, 4);
+        assertEquals(-0.25d, h.doubleValue());
+
+        Fraction i = new Fraction(1, 3);
+        assertEquals(1d / 3d, i.doubleValue());
+
+        Fraction j = new Fraction(0, 3);
+        assertEquals(0, j.doubleValue());
     }
 
     @Test
     public void testFloatValue() {
         // TODO (O2VTJT)
-        fail();
+        Fraction f = new Fraction(1);
+        assertEquals(1f, f.floatValue());
+
+        Fraction g = new Fraction( 1, 8);
+        assertEquals(0.125f, g.floatValue());
+
+        Fraction h = new Fraction(-1, 4);
+        assertEquals(-0.25f, h.floatValue());
+
+        Fraction i = new Fraction(1, 3);
+        assertEquals(1f / 3f, i.floatValue());
+
+        Fraction j = new Fraction(0, 3);
+        assertEquals(0, j.floatValue());
     }
 
     @Test
