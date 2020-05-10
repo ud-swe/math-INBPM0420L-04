@@ -159,7 +159,12 @@ public class Fraction extends Number implements Cloneable {
      */
     public Fraction subtract(Fraction fraction) {
         // TODO (UW7GG6)
-        return null;
+        if (this.denominator == fraction.denominator){
+            return new Fraction(this.numerator - fraction.numerator, this.denominator);
+        }
+
+        return new Fraction(((this.numerator * fraction.denominator) - (this.denominator * fraction.numerator)),
+                this.denominator * fraction.denominator);
     }
 
     /**
