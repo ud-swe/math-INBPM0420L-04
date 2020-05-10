@@ -290,7 +290,12 @@ public class Fraction extends Number implements Cloneable {
     @Override
     public Object clone() {
         // TODO (B0G7OP)
-        return null;
+        try {
+            return (Fraction)super.clone();
+        }
+        catch (CloneNotSupportedException clone){
+            throw new AssertionError();
+        }
     }
 
     /**
