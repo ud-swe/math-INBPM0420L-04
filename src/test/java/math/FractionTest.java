@@ -154,8 +154,15 @@ public class FractionTest {
 
     @Test
     public void testReciprocal() {
-        // TODO (GFD8XO)
-        fail();
+        Fraction f = new Fraction(13, 7);
+        assertFraction(7,13,f.reciprocal());
+
+        Fraction f2 = new Fraction(-13, 4);
+        assertFraction(-4,13,f2.reciprocal());
+
+        Fraction f3 = new Fraction(-1, -4);
+        assertFraction(4,1,f3.reciprocal());
+
     }
 
     @Test
